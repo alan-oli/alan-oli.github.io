@@ -1,0 +1,368 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Tint&family=New+Amsterdam&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/* font-family: "Roboto Mono", monospace; */
+/* font-family: "Josefin Sans", sans-serif; */
+/* font-family: "Anton", sans-serif; */
+/* font-family: "New Amsterdam", sans-serif; */
+/* font-family: "PT Serif", serif; */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    background-color: #262626;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    overflow-x: hidden;
+    position: relative;
+}
+
+aside#borda-lateral {
+    box-shadow: 1px 0 5px rgba(255, 255, 255, 0.459),
+                2px 0 5px black,
+                3px 0 10px black;
+    border-radius: 15px;
+    height: 942px;
+    width: 25%;
+    min-width: 300px;
+    flex: 0 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding: 40px;
+    background-color: #303030;
+    z-index: 2;
+}
+
+.perfil-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.imagem-perfil {
+    box-shadow: 1px 1px 2px #b040ff,
+                -1px -1px 2px #b040ff,
+                1px 1px 20px black,
+                -1px -1px 20px black,
+                1px 1px 2px white,
+                -1px -1px 2px white;
+    width: 100%;
+    max-height: 280px;
+    max-width: 280px;
+    min-width: 200px;
+    min-height: 200px;
+    flex: 0 1 auto;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1 / 1;
+    margin-bottom: 20px;
+    background: url('../img/foto-perfil.jpg') no-repeat center;
+    background-size: cover;
+    cursor: pointer;
+}
+
+.imagem-perfil:hover {
+    transform: scale(1.02, 1.02);
+    transition: all .5s ease;
+}
+
+.perfil-container h4 {
+    font-family: "roboto mono", monospace;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.6);
+    position: relative;
+}
+
+.perfil-container h4::after {
+    content: "";
+    position: absolute;
+    width: 60%;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+    left: 50%;
+    transform: translateX(-50%);
+    padding-top: 20px;
+}
+
+.perfil-container h1 {
+    font-family: "josefin sans", sans-serif;
+    font-size: 2rem;
+    text-wrap: nowrap;
+}
+
+p#bio {
+    width: 100%;
+    font-size: 1.2rem;
+    font-family: "PT Serif";
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 10px black,
+                -2px -2px 10px black;
+}
+
+ul#tecnologias {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    gap: 10px;
+}
+
+.tec-items h4 {
+    cursor: pointer;
+    font-weight: 600;
+    font-family: "new amsterdam", sans-serif;
+    letter-spacing: 3px;
+    font-size: 1.4rem;
+    text-shadow: 3px 3px 1px black;
+}
+
+.html-item, .css-item, .js-item, .c-item  {
+    position: relative;
+}
+
+.html-item::after {
+    content: "HTML";
+    color: red;
+}
+
+.css-item::after {
+    content: "CSS";
+    color: aqua;
+}
+
+.js-item::after {
+    content: "JAVASCRIPT";
+    color: yellow;
+}
+
+.c-item::after {
+    content: "C#";
+    color: rgb(0, 157, 255);
+}
+
+.html-item::after, .css-item::after, .js-item::after, .c-item::after  {
+    position: absolute;
+    left: 0;
+    width: 0;
+    font-weight: 600;
+    font-family: "new amsterdam", sans-serif;
+    letter-spacing: 3px;
+    font-size: 1.4rem;
+    overflow: hidden;
+    text-shadow: -2px -1px 1px black,
+                 -2px 0 1px black,
+                 0px -1px 1px black,
+                 2px 1px 2px black;
+}
+
+.html-item:hover::after, .css-item:hover::after, .js-item:hover::after, .c-item:hover::after {
+    width: 100%;
+    transition: all .3s ease-in-out;
+}
+
+.html-item:hover, .css-item:hover, .js-item:hover, .c-item:hover {
+    color: transparent;
+}
+
+ul#contatos {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.contato-icon {
+    fill: white;
+}
+
+.contato-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.contato-items a {
+    font-family: "PT Serif";
+    letter-spacing: 1px;
+    font-size: .9rem;
+    text-shadow: 2px 2px 5px black,
+                -2px -2px 5px black;
+}
+
+.contato-items a:hover {
+    transform: translateX(10px);
+    transition: all .4s ease;
+}
+
+#container-img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: hsla(0, 0%, 0%, 0.7);
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#img-from-container {
+    background: url('../img/foto-perfil.jpg') no-repeat center;
+    background-size: cover;
+    height: auto;
+    width: 40%;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    box-shadow: 1px 1px 2px #6d319785,
+    -1px -1px 2px #6d3197a7,
+    1px 1px 20px black,
+    -1px -1px 20px black,
+    1px 1px 2px white,
+    -1px -1px 2px white;
+    animation: flutuacao .6s ease forwards infinite alternate;
+}
+
+@keyframes flutuacao {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.01, 1.01);
+    }
+}
+
+
+@media screen and (max-width: 1350px) {
+    
+    p#bio {
+        font-size: 1rem;
+    }
+
+    .tec-items h4 {
+        font-size: 1.2rem;
+    }
+
+    .html-item::after, .css-item::after, .js-item::after, .c-item::after {
+        font-size: 1.2rem;
+    }
+
+    .contato-icon {
+        width: 28px;
+        height: 28px;
+    }
+
+    .contato-items a {
+        font-size: .8rem;
+    }
+
+}
+
+/* fim do aside, inicio do main */
+
+main, header, nav, .nav-list {
+    display: flex;
+}
+
+main {
+    height: 100%;
+    width: 75%;
+    flex-direction: column;
+}
+
+header {
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    box-shadow: 0 2px 10px #00000080,
+                0 1px 10px #00000080;
+    background-color: #303030;
+}
+
+nav {
+    width: 100%;
+}
+
+.nav-list {
+    width: 100%;
+
+    gap: 40px;
+    font-size: 1.3rem;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.list-items button {
+    background-color: #b040ff;
+    border: none;
+    border-radius: 10px;
+    width: 150px;
+    height: 45px;
+    cursor: pointer;
+    outline: none;
+    font-size: 1.3rem;
+    box-shadow: -3px 3px 3px black,
+                -3px 3px 3px black;
+                opacity: .6;
+    text-shadow: 1px 1px 5px black,
+                 -1px -1px 10px black;
+    font-family: "josefin sans";
+    opacity: .5;
+}
+
+.list-items button:hover {
+    transform: translateX(-3px) translateY(3px);
+    box-shadow: 1px 1px 5px rgba(255, 255, 255, 0.455),
+                -1px -1px 5px rgba(255, 255, 255, 0.437),
+                1px 1px 10px rgba(255, 255, 255, 0.51),
+                -1px -1px 10px rgba(255, 255, 255, 0.452);
+    opacity: .8;
+    border: 1px solid black;
+}
+
+.link-items {
+    opacity: .6;
+    text-shadow: 1px 1px 5px black,
+                 -1px -1px 10px black;
+    font-family: "josefin sans";
+}
+
+.list-items:hover:not(:last-child)  {
+    transform: scale(1.1, 1.1);
+    transition: all .3s ease;
+}
+
+.link-items:hover {
+    opacity: 1;
+}
+
