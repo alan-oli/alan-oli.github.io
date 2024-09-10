@@ -23,6 +23,10 @@
     text-decoration: none;
 }
 
+main, header, nav, .nav-list {
+    display: flex;
+}
+
 body {
     background-color: #262626;
     width: 100vw;
@@ -30,6 +34,7 @@ body {
     display: flex;
     overflow-x: hidden;
     position: relative;
+    align-items: stretch;
 }
 
 aside#borda-lateral {
@@ -44,7 +49,7 @@ aside#borda-lateral {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
     gap: 50px;
     padding: 40px;
     background-color: #303030;
@@ -199,6 +204,7 @@ ul#contatos {
 
 .contato-icon {
     fill: white;
+    cursor: pointer;
 }
 
 .contato-items {
@@ -230,7 +236,7 @@ ul#contatos {
     background: hsla(0, 0%, 0%, 0.7);
     z-index: 2;
     width: 100%;
-    height: 100%;
+    height: 942px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -250,6 +256,9 @@ ul#contatos {
     1px 1px 2px white,
     -1px -1px 2px white;
     animation: flutuacao .6s ease forwards infinite alternate;
+    background: url('../img/foto-perfil.jpg') no-repeat center;    
+    background-size: cover;
+    z-index: 3;
 }
 
 @keyframes flutuacao {
@@ -290,12 +299,9 @@ ul#contatos {
 
 /* fim do aside, inicio do main */
 
-main, header, nav, .nav-list {
-    display: flex;
-}
 
 main {
-    height: 100%;
+    height: 942px;
     width: 75%;
     flex-direction: column;
 }
@@ -303,7 +309,8 @@ main {
 header {
     justify-content: center;
     align-items: center;
-    padding: 25px;
+    margin-left: -5px;
+    padding: 15px;
     box-shadow: 0 2px 10px #00000080,
                 0 1px 10px #00000080;
     background-color: #303030;
@@ -322,8 +329,8 @@ nav {
     justify-content: space-evenly;
 }
 
-.list-items button {
-    background-color: #b040ff;
+.list-items .btn {
+    background-color: #984ad0;
     border: none;
     border-radius: 10px;
     width: 150px;
@@ -340,29 +347,84 @@ nav {
     opacity: .5;
 }
 
-.list-items button:hover {
+.list-items .btn:hover {
     transform: translateX(-3px) translateY(3px);
-    box-shadow: 1px 1px 5px rgba(255, 255, 255, 0.455),
-                -1px -1px 5px rgba(255, 255, 255, 0.437),
-                1px 1px 10px rgba(255, 255, 255, 0.51),
-                -1px -1px 10px rgba(255, 255, 255, 0.452);
+    box-shadow: 1px 1px 20px rgba(255, 255, 255, 0.3);
     opacity: .8;
     border: 1px solid black;
 }
 
+.link-items:hover {
+    transition: all .6s ease-in-out;
+    opacity: 1;
+}
+
 .link-items {
-    opacity: .6;
     text-shadow: 1px 1px 5px black,
                  -1px -1px 10px black;
     font-family: "josefin sans";
+    opacity: .6;
+    font-size: 1.2rem;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 10px 15px;
 }
 
-.list-items:hover:not(:last-child)  {
-    transform: scale(1.1, 1.1);
-    transition: all .3s ease;
-}
-
-.link-items:hover {
+.selected {
+    padding: 10px 15px;
     opacity: 1;
+    border-radius: 10px;
+    background-color: rgba(110, 110, 110, 0.28);
 }
+
+.conteudo-sobre, .conteudo-projetos {
+    max-width: 100%;
+    max-height: 100%;
+    height: 100%;
+    overflow-y: auto;
+    padding: 50px;
+}
+
+.conteudo-sobre p, .conteudo-titulo, .cursos {
+    text-indent: 50px;
+    line-height: 35px;
+    font-size: 1.3rem;
+    font-family: 'PT Serif';
+    letter-spacing: 1.5px;
+    text-shadow: 1px 1px 1px black;
+    margin-bottom: 10px;
+}
+
+.conteudo-titulo {
+    opacity: .6;
+    text-indent: 0;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 50px;
+    font-size: 4rem;
+    color: #984ad0;
+    text-shadow: 1px 1px 2px white;
+}
+
+.primeira-letra {
+    font-family: 'josefin sans';
+    font-size: 1.6rem;
+}
+
+.cursos {
+    opacity: .6;
+    padding: 30px 0;
+    text-indent: 0;
+    font-size: 2rem;
+    color: #984ad0;
+    text-shadow: 1px 1px 1px white;
+    letter-spacing: 5px;
+}
+
+.conteudo-projetos {
+    display: none;
+}
+
 
