@@ -59,7 +59,7 @@ aside#borda-lateral {
     z-index: 2;
     position: fixed;
     top: 0;
-    left: -101%;
+    left: -100%;
     /* animation: slideAside 1s ease forwards; */
 }
 
