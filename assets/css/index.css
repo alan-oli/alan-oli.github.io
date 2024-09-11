@@ -32,13 +32,13 @@ html {
 }
 
 body {
+    display: flex;
+    flex-direction: column;
     background-color: #262626;
     width: 100vw;
     min-height: 100vh;
     overflow-x: hidden;
     position: relative;
-    display: flex;
-    flex-direction: column;
 }
 
 
