@@ -23,6 +23,30 @@ links.forEach((link, indice) => {
     })
 })
 
+document.querySelector('.menu').addEventListener('click', ()=> {
+
+    const aside = document.getElementById('borda-lateral')
+
+    document.querySelector('section').style.filter = 'blur(2px)'
+    document.querySelector('header').style.filter = 'blur(2px)'
+
+    aside.style.animation = 'slideAside 1s ease forwards'
+
+    document.querySelector('body').style.overflow = 'hidden'
+
+    document.querySelectorAll('section').forEach(section => section.addEventListener('click', () => {
+
+        document.querySelector('section').style.filter = 'none'
+        document.querySelector('header').style.filter = 'none'
+
+        aside.style.animation = 'esconder 2s ease forwards'
+
+        document.querySelector('body').style.overflowY = 'auto'
+
+    }))
+
+})
+
 document.querySelector('.imagem-perfil').addEventListener('click', () => {
     const divContainer = document.createElement('div')
     const divImg = document.createElement('div')
@@ -34,20 +58,16 @@ document.querySelector('.imagem-perfil').addEventListener('click', () => {
     divContainer.append(divImg)
 
     document.querySelector('body').append(divContainer)
-    document.querySelector('aside').style.filter = 'blur(2px)'
-    document.querySelector('main').style.filter = 'blur(2px)'
+    document.querySelector('section').style.filter = 'blur(2px)'
 
     divContainer.addEventListener('click', () => {
         divContainer.remove()
-        document.querySelector('aside').style.filter = 'none'
-        document.querySelector('main').style.filter = 'none'
+        document.querySelector('section').style.filter = 'none'
     })
 
     document.querySelector('body').addEventListener('keydown', (ev) => {
         if(ev.key === 'Escape') {
             divContainer.remove()
-            document.querySelector('aside').style.filter = 'none'
-            document.querySelector('main').style.filter = 'none'
         }
     })
 })
@@ -77,11 +97,7 @@ function verificaLinkContent(text) {
         case 'github/alan-oli':
             return '#6d3197'
         case 'in/alan-oli':
-            return '#3077bc'
-        case 'alang_oli':
-            return '#e9477e'
-        case 'alang.oliveira':
-            return '#086dff'          
+            return '#3077bc'       
         case 'alangdev@hotmail.com':
             return '#0a74c7'
     }
