@@ -67,6 +67,21 @@ document.querySelector('.lateral-direito-icon').addEventListener('click', () => 
 
 })
 
+window.addEventListener('resize', () => {
+
+    const barraDireita = document.querySelector('.lateral-direito')
+
+    if (window.innerWidth >= 680) {
+
+        barraDireita.style.transform = 'translateY(0)'
+        barraDireita.style.animation = 'none'
+
+    } else {
+        barraDireita.style.transform = 'translateY(-150%)'
+    }
+
+})
+
 
 document.querySelector('.imagem-perfil').addEventListener('click', () => {
     const divContainer = document.createElement('div')

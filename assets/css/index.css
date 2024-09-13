@@ -454,8 +454,11 @@ footer {
 
     .nav-list {
         gap: 30px;
+    }    
+   
+    nav {
+        transform: translateY(auto);
     }
-
 }
 
 
@@ -591,4 +594,5 @@ footer {
     }
 
 }
+
 
