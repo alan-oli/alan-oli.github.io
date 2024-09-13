@@ -46,7 +46,7 @@ aside#borda-lateral {
     box-shadow: 1px 0 5px rgba(255, 255, 255, 0.459),
                 2px 0 5px black,
                 3px 0 10px black;
-    border-radius: 15px;
+    border-radius: 0 15px 15px 0;
     height: 100vh;
     width: 25%;
     min-width: 300px;
@@ -319,32 +319,6 @@ ul#contatos {
 
 }
 
-
-@media screen and (max-width: 1350px) {
-    
-    p#bio {
-        font-size: 1rem;
-    }
-
-    .tec-items h4 {
-        font-size: 1.2rem;
-    }
-
-    .html-item::after, .css-item::after, .js-item::after, .c-item::after {
-        font-size: 1.2rem;
-    }
-
-    .contato-icon {
-        width: 28px;
-        height: 28px;
-    }
-
-    .contato-items a {
-        font-size: .8rem;
-    }
-
-}
-
 /* fim do aside, inicio do main */
 
 header {
@@ -436,14 +410,14 @@ header {
     animation: showContatos 1s ease forwards;
 }
 
-.conteudo-sobre p, .conteudo-titulo, .cursos {
-    text-indent: 50px;
-    line-height: 35px;
-    font-size: 1.3rem;
+.conteudo-sobre p {
+    text-indent: 5rem;
+    line-height: 4rem;
+    font-size: 2rem;
     font-family: 'PT Serif';
     letter-spacing: 1.5px;
     text-shadow: 1px 1px 1px black;
-    margin-bottom: 10px;
+    margin-bottom: 1rem;
 }
 
 .conteudo-titulo {
@@ -458,7 +432,7 @@ header {
 
 .primeira-letra {
     font-family: 'josefin sans';
-    font-size: 1.6rem;
+    font-size: 3rem;
 }
 
 .cursos {
@@ -477,6 +451,92 @@ footer {
     justify-content: center;
     padding: 20px 50px;
     background-color: black;
+}
+
+@media screen and (max-width: 1350px) {
+    
+    p#bio {
+        font-size: 1rem;
+    }
+
+    .tec-items h4 {
+        font-size: 1.2rem;
+    }
+
+    .html-item::after, .css-item::after, .js-item::after, .c-item::after {
+        font-size: 1.2rem;
+    }
+
+    .contato-icon {
+        width: 28px;
+        height: 28px;
+    }
+
+    .contato-items a {
+        font-size: .8rem;
+    }
+
+    .conteudo-sobre p {
+        text-indent: 4rem;
+        line-height: 3.5rem;
+        font-size: 1.6rem;
+    }
+
+    .primeira-letra {
+        font-size: 2.6rem;
+    }
+
+    li#sumir {
+        display: none;
+    }
+
+    .nav-list {
+        gap: 30px;
+    }
+
+}
+
+
+@media screen and (max-width: 680px) {
+
+    .conteudo-sobre {
+        padding: 100px 30px 0 30px;
+    }
+    
+    .conteudo-sobre p {
+        font-size: 1rem;
+    }
+
+    .primeira-letra {
+        font-size: 1.6rem;
+    }
+
+    header {
+        padding: 10px 30px;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        display: none;
+        background-color: #303030;
+        border-radius: 15px 0 0 15px;
+        padding: 40px;
+        gap: 30px;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 100%;
+        box-shadow: 1px 0 5px rgba(255, 255, 255, 0.459),
+        2px 0 5px black,
+        3px 0 10px black;
+    }
+
+    nav {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 500px;
+    }
+
 }
 
 
