@@ -29,6 +29,7 @@ document.querySelector('.menu').addEventListener('click', ()=> {
 
     document.querySelector('section').style.filter = 'blur(2px)'
     document.querySelector('header').style.filter = 'blur(2px)'
+    document.querySelector('footer').style.filter = 'blur(2px)'
 
     aside.style.animation = 'slideAside 1s ease forwards'
 
@@ -38,6 +39,7 @@ document.querySelector('.menu').addEventListener('click', ()=> {
 
         document.querySelector('section').style.filter = 'none'
         document.querySelector('header').style.filter = 'none'
+        document.querySelector('footer').style.filter = 'none'
 
         aside.style.animation = 'esconder 2s ease forwards'
 
@@ -46,6 +48,31 @@ document.querySelector('.menu').addEventListener('click', ()=> {
     }))
 
 })
+
+document.querySelector('.lateral-direito-icon').addEventListener('click', () => {
+
+    const barraDireita = document.querySelector('.lateral-direito')
+
+    document.querySelector('section').style.filter = 'blur(2px)'
+    document.querySelector('footer').style.filter = 'blur(2px)'
+
+    barraDireita.style.animation = 'showBordaDireita 1s ease forwards'
+
+    document.querySelector('body').style.overflow = 'hidden'
+
+    document.querySelector('.close-lateral-direito').addEventListener('click', () => {
+
+        document.querySelector('section').style.filter = 'none'
+        document.querySelector('footer').style.filter = 'none'
+
+        barraDireita.style.animation = 'esconderBordaDireita 2.5s ease forwards'
+
+        document.querySelector('body').style.overflowY = 'auto'
+
+    })
+
+})
+
 
 document.querySelector('.imagem-perfil').addEventListener('click', () => {
     const divContainer = document.createElement('div')
