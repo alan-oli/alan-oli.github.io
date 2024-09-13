@@ -23,7 +23,8 @@ links.forEach((link, indice) => {
     })
 })
 
-document.querySelector('.menu').addEventListener('click', ()=> {
+
+document.querySelector('.barra-perfil').addEventListener('click', ()=> {
 
     const aside = document.getElementById('borda-lateral')
 
@@ -35,23 +36,16 @@ document.querySelector('.menu').addEventListener('click', ()=> {
 
     document.querySelector('body').style.overflow = 'hidden'
 
-    document.querySelectorAll('section').forEach(section => section.addEventListener('click', () => {
-
-        document.querySelector('section').style.filter = 'none'
-        document.querySelector('header').style.filter = 'none'
-        document.querySelector('footer').style.filter = 'none'
-
-        aside.style.animation = 'esconder 2s ease forwards'
-
-        document.querySelector('body').style.overflowY = 'auto'
-
-    }))
+    document.querySelectorAll('section').forEach(section => section.addEventListener('click', addEventSection))
 
 })
 
 document.querySelector('.lateral-direito-icon').addEventListener('click', () => {
 
     const barraDireita = document.querySelector('.lateral-direito')
+
+    document.querySelectorAll('section').forEach(section => section.removeEventListener('click', addEventSection))
+    
 
     document.querySelector('section').style.filter = 'blur(2px)'
     document.querySelector('footer').style.filter = 'blur(2px)'
@@ -131,3 +125,16 @@ function verificaLinkContent(text) {
 
 }
 
+function addEventSection() {
+
+    const aside = document.getElementById('borda-lateral')
+
+    document.querySelector('section').style.filter = 'none'
+    document.querySelector('header').style.filter = 'none'
+    document.querySelector('footer').style.filter = 'none'
+
+    aside.style.animation = 'esconder 2s ease forwards'
+
+    document.querySelector('body').style.overflowY = 'auto'
+
+}
